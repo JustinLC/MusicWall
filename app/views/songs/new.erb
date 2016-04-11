@@ -1,0 +1,32 @@
+<h1>Post a Song</h1>
+<hr/>
+
+<% if @song.errors.any? %>
+  <div>
+    <h3><strong>Some issues with your song, please fix them:</strong></h3><hr/>
+    <ul>
+      <% @song.errors.full_messages.each do |song| %>
+        <div class="alert alert-danger" role="alert"><li><%= song %></li></div>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form method="post" action="/songs">
+	<div>
+		<label>Artist:</label>
+		    <input type="text" name="artist" value="<%= @song.artist %>">
+	</div>
+	<div>
+		<label>Name:</label>
+		    <input type="text" name="name" value="<%= @song.name %>">
+	</div>
+	<div>
+		<label>Url:</label>
+		    <input type="text" name="url" value="<%= @song.url %>">
+	</div>
+	<hr/>
+	<div class="btn-group" role="group" aria-label="...">
+  	<button type="submit" class="btn btn-default">Submit</button>
+	</div>
+</form>

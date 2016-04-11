@@ -1,0 +1,27 @@
+ToDoList
+
+When a user adds a song/track to the wall, it should record that that user created it.
+
+	Associations - has_many belongs_to
+	Add new migration for song_id
+	Song created by whom?
+
+
+Users can upvote any song (once) on the wall
+	Upvote Table
+	Columns - t.string song_id, t.integer user_id, t.integer votes
+	Create upvote/downvote buttons
+
+	def liked(:id)
+		@songs = Songs.find
+		@like = song.likes.find(current_user)
+		if relike and @liked.value == true
+			like.dislike
+		else
+			@like.like
+		end
+	end
+
+Songs will show how many upvotes they have and be ordered by # of upvotes
+
+	

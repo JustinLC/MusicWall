@@ -1,0 +1,35 @@
+h1 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+li {
+  display: inline;
+  font-size: 30px;
+}
+
+.jumbotron {
+  text-align: center;
+  position: relative;
+  background-image: url("../images/boxhead.jpg");
+  background-size: cover;
+}
+
+label {
+	font-size: 20px;
+}
+
+form {
+	text-align: center;
+}
+
+.caption {
+	text-align: center;
+}

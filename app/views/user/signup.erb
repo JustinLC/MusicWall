@@ -1,0 +1,31 @@
+<h1>Create a User Account</h1>
+
+<% if @user.errors.any? %>
+  <div>
+    <h3><strong>There are some issues with the user creation:</strong></h3><hr/>
+    <ul>
+      <% @user.errors.full_messages.each do |user| %>
+        <div class="alert alert-danger" role="alert"><li><%= user %></li></div>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form method="post" action="/user/signup">
+	<div>
+		<label>Email: <input name="email" class="form-control" type="text" value="<%= @user.email %>"/></label>
+	</div>
+	<div>
+		<label>Password: <input name="password" class="form-control" type="password" value="<%= @user.password %>"/></label>
+	</div>
+	<div>
+    <label>Confirm Password: <input name="confirm-password" class="form-control" type="password" value="<%= @user.password %>"/></label>
+  </div>
+	<div>
+	<hr/>
+	<div class="btn-group" role="group" aria-label="...">
+  	<button class="btn btn-default" type="submit" >Submit</button>
+	</div>
+</form>
+
+<h3><a href="/user/signin">Already have an account? Signin now!</a></h3>
